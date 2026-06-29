@@ -1,0 +1,44 @@
+
+
+[project]
+name = "finalproject"
+version = "0.1.0"
+description = "Literary language analysis"
+requires-python = ">=3.11"
+
+dependencies = [
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.11.0",
+    "pandas>=3.0.3",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+#[build-system]
+#requires = ["setuptools>=61"]
+#build-backend = "setuptools.build_meta"
+#
+#[project]
+#name = "master-analyzer"
+#version = "0.1.0"
+#description = "Literary language analysis project"
+#requires-python = ">=3.11"
+#
+#dependencies = [
+#    "numpy",
+#    "pandas",
+#    "matplotlib"
+#]
+#
+#[tool.setuptools.packages.find]
+#where = ["src"]
+#
+#[tool.setuptools]
+#package-dir = {"" = "src"}
