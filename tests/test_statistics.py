@@ -43,25 +43,18 @@ print(statss["total"]["word_count"])
 
 
 from collections import Counter
-from master_analyzer.similarity import calculate_similarity
-f1 = Counter({
-    "cat": 10,
-    "dog": 5,
-    "bird": 2
-})
-
-f2 = Counter({
-    "cat": 8,
-    "dog": 5,
-    "fish": 3
-})
-
-print("similarity is:",calculate_similarity(f1, f2))
 
 from master_analyzer.statistics import count_word_frequencies
 
-freq = count_word_frequencies(
-    ["cat", "dog", "cat"]
-)
+def test_count_word_frequencies():
+    words = ["cat","dog","fish","cat"]
+    frequencies = count_word_frequencies(words)
+    assert frequencies == Counter({"cat":2, "dog":1, "fish":1})
 
-print(freq)
+def test_extract_words():
+
+    text = "Cat dog cat."
+
+    words = extract_words(text)
+
+    assert words == ["Cat", "dog", "cat"]
